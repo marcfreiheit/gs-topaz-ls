@@ -29,6 +29,19 @@
 				"${workspaceRoot}/client/server/**/*.js"
 			],
 			"preLaunchTask": "watch:server"
-		}
+        },
+        {
+            "name": "Extension Tests (Client)",
+            "type": "extensionHost",
+            "request": "launch",
+            "runtimeExecutable": "${execPath}",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}/client",
+                "--extensionTestsPath=${workspaceFolder}/client/out/src/test"
+            ],
+            "outFiles": [
+                "${workspaceFolder}/client/out/src/test/**/*.js",
+            ]
+        }
 	]
 }

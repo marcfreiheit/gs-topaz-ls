@@ -13,7 +13,7 @@ import * as assert from 'assert';
 suite("Extension Tests", () => {
 
     // Defines a Mocha unit test
-    test("Something 1", () => {
+    test("Travis it works again! (Client)", () => {
         assert.equal(-1, [1, 2, 3].indexOf(5));
         assert.equal(-1, [1, 2, 3].indexOf(0));
     });

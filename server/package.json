@@ -15,9 +15,17 @@
 	"dependencies": {
 		"vscode-languageserver": "^3.5.0"
 	},
+	"devDependencies": {
+		"typescript": "^2.6.1",
+		"vscode": "^1.1.6",
+		"tslint": "^5.8.0",
+		"@types/node": "^7.0.43",
+		"@types/mocha": "^2.2.42"
+	},
 	"scripts": {
 		"installServer": "installServerIntoExtension ../client ./package.json ./tsconfig.json",
 		"compile": "installServerIntoExtension ../client ./package.json ./tsconfig.json && tsc -p .",
-		"watch": "installServerIntoExtension ../client ./package.json ./tsconfig.json && tsc -w -p ."
+		"watch": "installServerIntoExtension ../client ./package.json ./tsconfig.json && tsc -w -p .",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
 	}
 }
