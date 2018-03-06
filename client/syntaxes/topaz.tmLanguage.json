@@ -59,8 +59,7 @@
 			{
 				"match": "\\b(shell|spawn)(.+)?",
 				"captures": {
-					"1": {"name": "entity.name.function.topaz"},
-					"2": {"include": "source.shell"}
+					"1": {"name": "entity.name.function.topaz"}
 				}
 			},
 			{
