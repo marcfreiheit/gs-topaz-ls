@@ -1,10 +1,13 @@
 {
-    "name": "gs-topaz-ls",
+    "name": "gs-topaz",
     "description": "A language server for GemStone Topaz",
     "author": "Marc André Freiheit",
     "license": "MIT",
     "version": "0.0.1",
     "publisher": "marcfreiheit",
+    "engines": {
+		"vscode": "^1.20.0"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/marcfreiheit/gs-topaz-ls"

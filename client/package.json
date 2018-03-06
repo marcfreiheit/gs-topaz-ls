@@ -3,17 +3,22 @@
 	"description": "Language server for GemStone Topaz",
 	"author": "Marc André Freiheit",
 	"license": "MIT",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"publisher": "marcfreiheit",
 	"repository": {
-		"type": "git",
-		"url": "https://github.com/marcfreiheit/gs-topaz-ls"
-	},
+        "type": "git",
+        "url": "https://github.com/marcfreiheit/gs-topaz-ls"
+    },
+    "bugs": {
+        "type": "git",
+        "url": "https://github.com/marcfreiheit/gs-topaz-ls/issues"
+    },
 	"engines": {
 		"vscode": "^1.20.0"
 	},
 	"categories": [
-		"Other"
+        "Languages",
+        "Snippets"
 	],
 	"activationEvents": [
 		"onLanguage:topaz"
@@ -24,22 +29,21 @@
             {
                 "id": "topaz",
                 "aliases": [
-                    "GemStone topaz 2",
+                    "GemStone topaz",
                     "Topaz",
                     "topaz"
                 ],
                 "extensions": [".tpz"],
-                "configuration": "../language-configuration.json"
+                "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
             {
                 "language": "topaz",
                 "scopeName": "source.topaz",
-                "path": "../syntaxes/topaz.tmLanguage.json",
+                "path": "./syntaxes/topaz.tmLanguage.json",
                 "embeddedLanguages": {
-                    "source.smalltalk": "smalltalk",
-                    "source.shell": "shellscript"
+                    "source.smalltalk": "smalltalk"
                 }
             }
         ]
