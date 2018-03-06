@@ -1,0 +1,94 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Topaz",
+	"patterns": [
+		{
+			"include": "#commands"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#SmallTalk"
+		}
+	],
+	"repository": {
+		"commands": {
+			"patterns": [{
+				"name": "entity.name.function.topaz",
+				"match": "\\b(allstacks|begin|category:|continue|c|debugrun|define|disassem|display|doit|down|edit|errorcount|exec|exit|exitifnoerror|expecterror|expectvalue|fileformat|fileout|fr_cls|frame|gcitrace|help|hierachy|history|iferr|iferr_clear|iferr_list|iferror|implementors|input|inspect|interp|level|limit|listw|l|literals|loadua|logoutifloggedin|lookup|nbresult|nbrun|nbstep|obj1|obj2|object|omit|output|pausefordebug|pkglookup|printit|protectmethods|quit|releaseall|remark|removeallclassmethods|run|send|senders|spawn|status|step|stk|strings|stringsic|subclasses|temporary|thread|threads|time|unprotectmethods|up|where)\\s"
+			},
+			{
+				"name": "entity.name.class.topaz",
+				"match": "\\b(commit|abort|login|logout)\\b"
+			},
+			{
+				"match": "\\b(methodsFor:).+(stamp:).+\\s",
+				"captures": {
+					"1": {"name": "entity.name.function.topaz"},
+					"2": {"name": "entity.name.function.topaz"}
+				}
+			},
+			{
+				"match": "\\b(object:).+(at:).+(put:).+\\b",
+				"captures": {
+					"1": {"name": "entity.name.function.topaz"},
+					"2": {"name": "entity.name.function.topaz"},
+					"4": {"name": "entity.name.function.topaz"}
+				}
+			},
+			{
+				"match": "\\b(set|stack)\\s(\\S+)(\\s\\S+)?(\\s(\\S+)\\s\\S+)?",
+				"captures": {
+					"1": {"name": "entity.name.function.topaz"},
+					"2": {"name": "variable.parameter.topaz"},
+					"5": {"name": "variable.parameter.topaz"}
+				}
+			},
+			{
+				"match": "\\b(break)\\s((method|classmethod)\\s(\\^|[^\\^\\s]+)\\s\\S+(\\s(@)\\s\\d+)?|(enable|disable|delete)\\s(\\d+|all)|(list)|\\d+)",
+				"captures": {
+					"1": {"name": "entity.name.function.topaz"},
+					"3": {"name": "variable.parameter.topaz"},
+					"6": {"name": "variable.parameter.topaz"},
+					"7": {"name": "variable.parameter.topaz"},
+					"8": {"name": "variable.parameter.topaz"},
+					"9": {"name": "variable.parameter.topaz"}
+				}
+			},
+			{
+				"match": "\\b(shell|spawn)(.+)?",
+				"captures": {
+					"1": {"name": "entity.name.function.topaz"},
+					"2": {"include": "source.shell"}
+				}
+			},
+			{
+				"match": "\\b(nil|self|super|thisContext|true|false)\\b",
+				"name": "keyword.control.topaz"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.topaz",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.topaz",
+					"match": "\\\\."
+				}
+			]
+		},
+		"SmallTalk": {
+			"name": "source.smalltalk.embedded.topaz",
+			"begin": "^(method:|classmethod:).+",
+			"beginCaptures": {
+				"1": { "name": "entity.name.function.topaz" }
+			},
+			"end": "%",
+			"endCaptures": { "0": {"name": "entity.name.function.topaz"} },
+			"patterns": [{ "include": "source.smalltalk" }]
+		}
+	},
+	"scopeName": "source.topaz"
+}

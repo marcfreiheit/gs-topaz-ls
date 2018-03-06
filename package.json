@@ -1,39 +1,34 @@
 {
-				"name": "gs-topaz-ls",
-				"description": "A language server for GemStone Topaz",
-				"author": "Marc André Freiheit",
-				"license": "MIT",
-				"version": "0.0.1",
-				"publisher": "marcfreiheit",
-				"repository": {
-								"type": "git",
-								"url": "https://github.com/marcfreiheit/gs-topaz-ls"
-				},
-				"contributes": {
-								"languages": [
-												{
-																"id": "topaz",
-																"aliases": [
-																				"GemStone topaz"
-																],
-																"extensions": [
-																				"tpz"
-																]
-												}
-								]
-				},
-				"scripts": {
-								"postinstall": "cd server && npm install && cd ../client && npm install && cd ..",
-								"compile": "tsc -p client/tsconfig.json && cd server && npm run installServer && cd .. && tsc -p server/tsconfig.json",
-								"compile:client": "tsc -p client/tsconfig.json",
-								"watch:client": "tsc -w -p client/tsconfig.json",
-								"compile:server": "cd server && npm run installServer && cd .. && tsc -p server/tsconfig.json",
-								"watch:server": "cd server && npm run installServer && cd .. && tsc -w -p server/tsconfig.json",
-								"test": "cd client && npm run test"
-				},
-				"devDependencies": {
-								"@types/mocha": "^2.2.48",
-								"@types/node": "^6.0.101",
-								"typescript": "^2.7.2"
-				}
+    "name": "gs-topaz-ls",
+    "description": "A language server for GemStone Topaz",
+    "author": "Marc André Freiheit",
+    "license": "MIT",
+    "version": "0.0.1",
+    "publisher": "marcfreiheit",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/marcfreiheit/gs-topaz-ls"
+    },
+    "bugs": {
+        "type": "git",
+        "url": "https://github.com/marcfreiheit/gs-topaz-ls/issues"
+    },
+    "categories": [
+        "Languages",
+        "Snippets"
+    ],
+    "scripts": {
+        "postinstall": "cd server && npm install && cd ../client && npm install && cd ..",
+        "compile": "tsc -p client/tsconfig.json && cd server && npm run installServer && cd .. && tsc -p server/tsconfig.json",
+        "compile:client": "tsc -p client/tsconfig.json",
+        "watch:client": "tsc -w -p client/tsconfig.json",
+        "compile:server": "cd server && npm run installServer && cd .. && tsc -p server/tsconfig.json",
+        "watch:server": "cd server && npm run installServer && cd .. && tsc -w -p server/tsconfig.json",
+        "test": "cd client && npm run test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.48",
+        "@types/node": "^6.0.101",
+        "typescript": "^2.7.2"
+    }
 }
